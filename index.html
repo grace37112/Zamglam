@@ -3,31 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zam Glam - Premium E-Commerce & Courier</title>
+    <title>Zam Glam - Clothing & Footwear Directory</title>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9;">
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f8fafc;">
 
-    <header style="background-color: #1a1a2e; color: #ffffff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin: 0; color: #e94560;">Zam Glam</h2>
+    <header style="background-color: #0f172a; color: #ffffff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #0284c7; box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);">
+        <h2 style="margin: 0; color: #38bdf8; font-family: 'Arial Black', sans-serif; letter-spacing: 0.5px; cursor: pointer;" onclick="window.showSection('marketplace')">✨ Zam Glam</h2>
         <nav>
-            <span style="margin-right: 20px; cursor: pointer; font-weight: bold;">Products</span>
-            <span style="margin-right: 20px; cursor: pointer; font-weight: bold;">Cart (0)</span>
-            <span style="cursor: pointer; color: #00fff5; font-weight: bold;" id="track-btn">Track Courier</span>
+            <span style="margin-right: 20px; cursor: pointer; font-weight: bold; color: #cbd5e1;" onclick="window.showSection('marketplace')">Browse Ads</span>
+            <span style="cursor: pointer; color: #ffffff; background-color: #0284c7; padding: 6px 15px; border-radius: 20px; font-weight: bold; transition: 0.2s;" onclick="window.showSection('tracking')">📦 Track Courier</span>
         </nav>
     </header>
 
     <main style="max-width: 1100px; margin: 40px auto; padding: 0 20px;">
-        
-        <div style="background: linear-gradient(135deg, #162447, #1a1a2e); color: white; padding: 40px; border-radius: 8px; text-align: center; margin-bottom: 30px;">
-            <h1 style="margin: 0 0 10px 0;">Zam Glam Logistics & Shop</h1>
-            <p style="color: #cbd5e1; margin: 0;">Browse products, add items to your cart, and simulate real-time delivery logistics.</p>
+
+        <div style="background: linear-gradient(135deg, #1e293b, #0f172a); color: #ffffff; padding: 45px; border-radius: 12px; text-align: center; margin-bottom: 35px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);">
+            <h1 style="margin: 0 0 10px 0; font-size: 2.3rem; letter-spacing: 0.5px;">Zam Glam Logistics & Ad Directory</h1>
+            <p style="color: #94a3b8; margin: 0; font-size: 1.1rem; font-weight: 300;">Connecting premium clothing & footwear catalog lines from top local vendors across Zambia.</p>
         </div>
 
-        <div id="main-display">
-            <h3 style="text-align: center; color: #475569;">Your system frontend is ready for code integration.</h3>
+        <div id="marketplace-section">
+            <h2 style="color: #1e293b; margin-bottom: 20px; border-left: 5px solid #0284c7; padding-left: 10px; font-size: 1.5rem;">Featured Showcases</h2>
+            <div id="main-display">
+                <h3 style="text-align: center; color: #94a3b8;">Loading fashion advertisements...</h3>
+            </div>
+        </div>
+
+        <div id="tracking-section" style="display: none;">
+            <h2 style="color: #1e293b; margin-bottom: 20px; border-left: 5px solid #0284c7; padding-left: 10px; font-size: 1.5rem;">Courier Logistics Portal</h2>
+            
+            <div style="background-color: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto;">
+                <p style="color: #475569; font-size: 0.95rem; margin-top: 0; margin-bottom: 20px;">Enter your unique consignment code to view real-time transit milestones across domestic distribution hubs.</p>
+                
+                <label style="display: block; font-weight: bold; color: #0f172a; margin-bottom: 8px; font-size: 0.9rem;">Consignment Tracking ID / Waybill Number</label>
+                <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+                    <input type="text" id="tracking-input" placeholder="e.g., ZG-101-LUS" style="flex-grow: 1; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; outline: none;">
+                    <button style="background-color: #0f172a; color: white; border: none; padding: 0 24px; border-radius: 6px; cursor: pointer; font-weight: bold;" onclick="window.simulateTracking()">Search Shipment</button>
+                </div>
+
+                <p style="font-size: 0.8rem; color: #64748b; background-color: #f1f5f9; padding: 10px; border-radius: 4px; border-left: 3px solid #64748b; margin: 0;">
+                    💡 <strong>Prototype Test Hint:</strong> Try typing <strong>ZG-101-LUS</strong> or <strong>ZG-202-NDO</strong> to simulate authentic server data status updates!
+                </p>
+
+                <div id="tracking-result-box" style="margin-top: 25px; display: none; padding-top: 20px; border-top: 2px dashed #e2e8f0;"></div>
+            </div>
         </div>
 
     </main>
+
+    <script src="js/app.js"></script>
 
 </body>
 </html>
